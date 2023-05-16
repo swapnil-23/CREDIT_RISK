@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Credit Risk Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="checking_status" placeholder="checking_status" required="required" /><br>
+        <input type="text" name="credit_history" placeholder="credit_history" required="required" /><br>
+		<input type="text" name="purpose" placeholder="purpose" required="required" /><br>
+		<input type="text" name="savings_status" placeholder="savings_status" required="required" /><br>
+        <input type="text" name="employment" placeholder="employment" required="required" /><br>
+        <input type="text" name="personal_status" placeholder="personal_status" required="required" /><br>
+        <input type="text" name="other_parties" placeholder="other_parties" required="required" /><br>
+        <input type="text" name="property_magnitude" placeholder="property_magnitude" required="required" /><br>
+        <input type="text" name="other_payment_plans" placeholder="other_payment_plans" required="required" /><br>
+        <input type="text" name="housing" placeholder="housing" required="required" /><br>
+        <input type="text" name="job" placeholder="job" required="required" /><br>
+        <input type="text" name="own_telephone" placeholder="own_telephone" required="required" /><br>
+        <input type="text" name="foreign_worker" placeholder="foreign_worker" required="required" /><br>
+        <input type="text" name="class" placeholder="class" required="required" /><br>
+
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_res }}
+
+ </div>
+
+
+</body>
+</html>

@@ -5,6 +5,7 @@ from sklearn.metrics import accuracy_score
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import OrdinalEncoder
+import pickle
 
 
 df = pd.read_csv('D:\CREDIT_RISK\credit_customers.csv')
@@ -49,9 +50,5 @@ model.fit(
     eval_metric='error',
 )
 
-## calculating the score
 
-y_pred = model.predict(X_test)
-predictions = [round(value) for value in y_pred]
-
-print("Accuracy: %.2f%%" % (accuracy_score(y_test, predictions) * 100.0))
+pickle.dump(XGBClassifier, open("model.pkl", "wb"))
